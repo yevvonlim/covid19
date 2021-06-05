@@ -1,0 +1,32 @@
+<h1>{{ "코로나19 안전 지키미" }}</h1>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+	   //#data 공간에서 keyup이라는 이벤트가 발생했을 때 실시간으로out에 출력함
+
+	   $("#data").keyup(function(){
+
+	        $("#out").text($("#data").val());
+
+	   });
+
+});
+
+</script>
+
+
+<div>
+    {% for question in question_list %}
+        <p>{{ question }}</p>
+            <form>
+                <input id="data">
+                <div id="out"> out </div>
+            </form>
+
+    {% endfor %}
+</div>

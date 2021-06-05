@@ -1,13 +1,20 @@
-from flask import Blueprint
+from flask import Blueprint, render_template, request
 
 bp = Blueprint('main', __name__, url_prefix='/')
-
+question = ["어디로 가시나요?", "얼마나 머무르시나요?", "당신의 코로나19 위험도 점수는"]
 
 @bp.route('/')
 def syte_inspection():
-    return '곧 지역별 코로나 위험도 예측 서비스가 시작될 예정입니다.'
-    
-    
+    return render_template('question/question_list.html', question_list=question)
+
+"""
+@bp.route('/', methods=['POST'])
+def test_print():
+    score = request.form['text']
+    return render_template('question/question_list.html', question_list=question, score=score)
+"""
+
+
 @bp.route('/ing')
 def test():
     return 'ING is so cute!'
