@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <h1>{{ "코로나19 안전 지키미" }}</h1>
 
 
@@ -24,7 +26,7 @@
     {% for question in question_list %}
         <p>{{ question }}</p>
             <form>
-                <input id="data">
+                <input id="data" type="text">
                 <div id="out"> out </div>
             </form>
 

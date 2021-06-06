@@ -1,0 +1,7 @@
+textarea {
+    width:100%;
+}
+input[type=text] {
+    border : 10px solid skyblue;
+    border-radius : 5px;
+}
