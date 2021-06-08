@@ -147,6 +147,38 @@ p.main {
     
 }
 
+p.red {
+ font-family: 'Noto Serif KR', serif;
+  font-size: 1.0rem;
+  color: #82030f;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+p.orange{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.0rem;
+  color: #d17d0f;
+  margin-top: 1rem;
+  margin-bottom: 1rem;  
+}
+p.yellow{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.0rem;
+  color: #f5db5b;
+  margin-top: 1rem;
+  margin-bottom: 1rem;   
+}
+
+p.green{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.0rem;
+  color: #3e9423;
+  margin-top: 1rem;
+  margin-bottom: 1rem;   
+}
+
+
 abbr[title],
 abbr[data-bs-original-title] {
   -webkit-text-decoration: underline dotted;
