@@ -86,11 +86,11 @@ h1, .h1 {
   font-family: 'Noto Serif KR', serif;
   /* font-size: 2rem; */
   font-weight: 500;
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: 1rem;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -506,7 +506,7 @@ progress {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -651,7 +651,7 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  width: 100%;
+  width: 540px;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
@@ -3262,27 +3262,27 @@ textarea.form-control-lg {
 }
 
 .btn-outline-secondary {
-  color: #9f1ae2;
-  border-color: #9f1ae2;
+  color: #b5b0b0;
+  border-color: #b5b0b0;
 }
 .btn-outline-secondary:hover {
   color: #fff;
-  background-color: #9f1ae2;
-  border-color: #9f1ae2;
+  background-color: #b5b0b0;
+  border-color: #b5b0b0;
 }
 .btn-check:focus + .btn-outline-secondary, .btn-outline-secondary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(159, 26, 226, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(186, 176, 176, 0.5);
 }
 .btn-check:checked + .btn-outline-secondary, .btn-check:active + .btn-outline-secondary, .btn-outline-secondary:active, .btn-outline-secondary.active, .btn-outline-secondary.dropdown-toggle.show {
   color: #fff;
-  background-color: #9f1ae2;
-  border-color: #9f1ae2;
+  background-color: #b5b0b0;
+  border-color: #b5b0b0;
 }
 .btn-check:checked + .btn-outline-secondary:focus, .btn-check:active + .btn-outline-secondary:focus, .btn-outline-secondary:active:focus, .btn-outline-secondary.active:focus, .btn-outline-secondary.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.25rem rgba(159, 26, 226, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(186, 176, 176, 0.5);
 }
 .btn-outline-secondary:disabled, .btn-outline-secondary.disabled {
-  color: #9f1ae2;
+  color: #b5b0b0;
   background-color: transparent;
 }
 
@@ -10994,6 +10994,7 @@ section {
 .device[data-device=KOREA][data-orientation=portrait][data-color=black]::after {
   content: "";
   background-image: url("../assets/img/portrait_black.png");
+  /* background-image: url("portrait_black.png"); */
 }
 
 .device[data-device=KOREA][data-orientation=portrait][data-color=black] .button {

@@ -29,7 +29,7 @@ function search_address(){
                     var p_score = document.getElementById('score');
                     var p_comment = document.getElementById('comment');
                 
-                    p_score.innerHTML = data + " 점";
+                    p_score.value = data + " 점";
                     
                     var n_score = parseInt(data);
                     if (n_score >= 70){
