@@ -14,15 +14,15 @@ def syte_inspection():
 
 @bp.route('/', methods=['POST'])
 def test_print():
-    location = request.form['location'].split(',')
+    location = request.form['coordi'].split(',')
+   
     time = float(request.form['time'])
     x, y = float(location[1]), float(location[0])
+    # print(x, y, time)
     
-    score = cd.calc_critical_score(model, x, y, time=time)
-    
-    return render_template('index.html',
-                      num=str(score))
-
+    score = cd.calc_critical_score(model, y, x, time=time)
+    # print(score)
+    return format(score, ".1f")
 
 
 @bp.route('/ing')
