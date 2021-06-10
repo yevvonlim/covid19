@@ -28,12 +28,12 @@ def district_num(info_dict, super_class):
       for key in info_dict.keys():
          if (key == super_class):
             return len(info_dict[key].keys())
-      
+
       for key in info_dict.keys():
          n = max(n, district_num(info_dict[key], super_class))
 
       return n
-  
+
    except AttributeError:
       return n
 
@@ -71,7 +71,7 @@ def get_geo_vector(info_dict, district_name):
 def numerical_2Dintegral(function, x, y, delta_x=0.07, delta_y=0.08, dx=0.01, dy=0.01):
   m_xx = np.linspace(x, x + dx, int(delta_x/dx))
   m_yy = np.linspace(y, y + dy, int(delta_y/dy))
-  
+
   m_X, m_Y = np.meshgrid(m_xx, m_yy)
   domain = np.array([m_X.ravel(), m_Y.ravel()]).T
 
@@ -82,17 +82,17 @@ def numerical_2Dintegral(function, x, y, delta_x=0.07, delta_y=0.08, dx=0.01, dy
 # 코로나 위험도 계산
 def calc_critical_score(func, x, y, n=10, time=4):
   return numerical_2Dintegral(func, x, y) * 100 / n * np.log(time + 1) / 1.6 * 100
-  
+
 
 # --------------------------------------------------------------------------------------------------------------
-#           
+#
 #           seoul_cases: 서울 자치구별 확진자 데이터가 들어있는 딕셔너리
 #           gyunggi_cases: 경기도 각 시별 확진자 데이터가 들어있는 딕셔너리
 #           other_cases: 기타 지역 시,도별 확진자 데이터가 들어있는 딕셔너리
 #           geo_info_dict: 각 자치구의 위도, 경도 데이터가 들어있는 딕셔너리
-# 
-# 
-# 
+#
+#
+#
 # --------------------------------------------------------------------------------------------------------------
 
 
@@ -108,7 +108,7 @@ def create_model(save_path, path):
    geo_info_dict = json.loads(json.dumps(geo_info_dict, ensure_ascii=False))
 
 
-   date = time.strftime('%Y-%m-%d', time.localtime(time.time())) 
+   date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
 
    # ----------------------------------------------------------------------------------------------------------------
    # --------------------------------------------------코로나 현황 크롤링--------------------------------------------
@@ -165,7 +165,7 @@ def create_model(save_path, path):
    # 서울 학습데이터
    for region in seoul_cases.keys():
       xy = get_geo_vector(geo_info_dict, region)
-  
+
    for i in range(seoul_cases[region]):
       coordi = np.array(xy)
       X_train = np.vstack((X_train, coordi))
@@ -175,10 +175,10 @@ def create_model(save_path, path):
    for city in (gyunggi_cases.keys()):
       # 시 이하에 자치구가 있을 경우
       if isinstance(geo_info_dict["경기"][city], dict):
-   
+
          districts_num = len(geo_info_dict["경기"][city].keys())
          distributed_num = int (gyunggi_cases[city] / districts_num)
-    
+
          for district in geo_info_dict["경기"][city].keys():
             for i in range(distributed_num):
                coordi = np.array(geo_info_dict["경기"][city][district])
@@ -212,7 +212,7 @@ def create_model(save_path, path):
             # if (gyunggi_cases[city] % len(geo_info_dict["경기"][city].keys()) != 0) and (gyunggi_cases[city] != 0):
             # print("누락발생!")
             distributed_num = int (other_cases[prov] / districts_num)
-    
+
             for district in geo_info_dict[prov][city].keys():
                for i in range(distributed_num):
                   coordi = np.array(geo_info_dict[prov][city][district])
@@ -274,5 +274,5 @@ def load_model(path):
 
 
 if __name__ == "__main__":
-   create_model(r"/workspace/covid19/flask_app/model/model.pkl", r"/workspace/covid19/flask_app/data/geo_dict.json")
+   create_model(r"/home/COVID19danger/mysite/flask_app/model/model.pkl", r"/home/COVID19danger/mysite/flask_app/data/geo_dict.json")
 
