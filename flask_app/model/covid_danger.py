@@ -1,16 +1,13 @@
 import json
 
-import pandas as pd
 import numpy as np
 
 import joblib
 from sklearn.neighbors import KernelDensity
-from sklearn.preprocessing import Normalizer
 from sklearn.pipeline import Pipeline
 
 import time
 
-import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -166,9 +163,9 @@ def create_model(save_path, path):
    for region in seoul_cases.keys():
       xy = get_geo_vector(geo_info_dict, region)
 
-   for i in range(seoul_cases[region]):
-      coordi = np.array(xy)
-      X_train = np.vstack((X_train, coordi))
+      for i in range(seoul_cases[region]):
+        coordi = np.array(xy)
+        X_train = np.vstack((X_train, coordi))
 
 
    # 경기 학습데이터
