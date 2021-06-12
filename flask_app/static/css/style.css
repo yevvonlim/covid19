@@ -294,7 +294,7 @@ p.guide{
 
 p.red {
  font-family: 'Noto Serif KR', serif;
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   color: #82030f;
  
   -webkit-animation: fadeIn linear 2s;
@@ -308,7 +308,7 @@ p.red {
 
 p.orange{
   font-family: 'Noto Serif KR', serif;
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   color: #d17d0f;
   
     
@@ -322,7 +322,7 @@ p.orange{
 }
 p.yellow{
   font-family: 'Noto Serif KR', serif;
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   color: #f5db5b;
   
     
@@ -337,7 +337,7 @@ p.yellow{
 
 p.green{
   font-family: 'Noto Serif KR', serif;
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   color: #3e9423;
   
     

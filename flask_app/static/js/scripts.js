@@ -8,9 +8,13 @@ function search_address(){
     var address = document.getElementById('data1').value;
     var time_ = parseFloat(document.getElementById('data2').value);
     
-    if (time_ <= 0 || time_ > 24 || typeof(time_) != "number"){
+    if (time_ <= 0 || time_ > 24 || isNaN(time_)){
         document.getElementById('data2').value = "";
         document.getElementById('data2').placeholder = "0 ~ 24사이 숫자로 입력해주세요";
+        
+        document.getElementById('score').className = "hide";
+        document.getElementById('comment').className = "hide";
+        document.getElementById('guide').className = "hide";
     }
     else{
         // 주소-좌표 변환 객체를 생성합니다
@@ -36,22 +40,22 @@ function search_address(){
                     // document.getElementById('score').style.visibility = "visible";
                     var n_score = parseInt(data);
                     if (n_score >= 70){
-                        p_comment.innerHTML = "  대한민국에서 제일 위험!";
+                        p_comment.innerHTML = "&nbsp;&nbsp;&nbsp;대한민국에서 제일 위험!";
                         p_comment.className = "red";
                         
                     }
                     else if(n_score >= 50 && n_score < 70){
-                        p_comment.innerHTML = "  매우 위험!";
+                        p_comment.innerHTML = "&nbsp;&nbsp;&nbsp;매우 위험!";
                         p_comment.className = "orange";
                         
                     }
                     else if(n_score >= 10 && n_score < 50){
-                        p_comment.innerHTML = "  주의 요망!";
+                        p_comment.innerHTML = "&nbsp;&nbsp;&nbsp;주의 요망!";
                         p_comment.className = "yellow";
                         
                     }
                     else{
-                        p_comment.innerHTML = "  비교적 안전 :)";
+                        p_comment.innerHTML = "&nbsp;&nbsp;&nbsp;비교적 안전 :)";
                         p_comment.className = "green";
                         
                     }
@@ -66,6 +70,9 @@ function search_address(){
         else{
             document.getElementById('data1').value = "";
     	    document.getElementById('data1').placeholder = "정확한 주소를 입력해주세요 :(";
+            document.getElementById('score').className = "hide";
+            document.getElementById('comment').className = "hide";
+            document.getElementById('guide').className = "hide";
         }     
                                
         });
