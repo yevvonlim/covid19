@@ -82,6 +82,33 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
+
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 h1, .h1 {
   font-family: 'Noto Serif KR', serif;
   /* font-size: 2rem; */
@@ -138,19 +165,143 @@ p {
   font-weight: 400;
 }
 
+.inp {
+    border:none;
+    border-bottom: 1px solid #000000;
+    padding: 5px 10px;
+    outline: none;
+ }
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease; 
+    text-indent: -100%;
+    opacity: 1;
+ }
+
 p.main {
   font-family: 'Noto Serif KR', serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333232;
   margin-top: 1rem;
   margin-bottom: 1rem;
     
 }
 
+/*base code*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+/*the animation definition*/
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+@keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada
+}
+
+
+
+
+p.hide{
+  visibility: hidden;
+}
+
+p.guide{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.2rem;
+  color: #333232;
+  margin-top: 1rem;
+  
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+    
+  margin-bottom: 1rem;  
+  font-weight: 500;
+}
+
 p.red {
  font-family: 'Noto Serif KR', serif;
   font-size: 1.0rem;
   color: #82030f;
+ 
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+    
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -159,6 +310,13 @@ p.orange{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.0rem;
   color: #d17d0f;
+  
+    
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+    
   margin-top: 1rem;
   margin-bottom: 1rem;  
 }
@@ -166,6 +324,13 @@ p.yellow{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.0rem;
   color: #f5db5b;
+  
+    
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+    
   margin-top: 1rem;
   margin-bottom: 1rem;   
 }
@@ -174,6 +339,13 @@ p.green{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.0rem;
   color: #3e9423;
+  
+    
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+    
   margin-top: 1rem;
   margin-bottom: 1rem;   
 }
@@ -372,6 +544,16 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="number"],
+input[type="submit"] {
+     -webkit-appearance: none;
+     background-color: #f8f9fa;
+     border-radius: 0;
 }
 
 button,
@@ -651,33 +833,44 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
+  /*
   width: 540px;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
+  margin-left: auto;*/
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
   margin-left: auto;
 }
 
+
 @media (min-width: 576px) {
-  .container-sm, .container {
+  .container, .container-sm {
     max-width: 540px;
   }
 }
+
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 1300px;
+  .container, .container-sm, .container-md {
+    max-width: 720px;
   }
 }
+
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    width: 1300px;
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
   }
 }
+
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
-    width: 1300px;
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px;
   }
 }
+
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1300px;
@@ -6607,6 +6800,9 @@ textarea.form-control-lg {
 
 .border-5 {
   border-width: 5px !important;
+}
+.w-10 {
+  width: 10% !important;
 }
 
 .w-25 {

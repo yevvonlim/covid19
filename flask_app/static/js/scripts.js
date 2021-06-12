@@ -8,8 +8,8 @@ function search_address(){
     var address = document.getElementById('data1').value;
     var time_ = parseFloat(document.getElementById('data2').value);
     
-    if (time_ ==0){
-        document.getElementById('data1').value = "시간을 입력해주세요";
+    if (time_ <= 0 || time_ > 24 || typeof(time_) != "number"){
+        document.getElementById('data1').placeholder = "0 ~ 24사이 숫자로 입력해주세요";
     }
     else{
         // 주소-좌표 변환 객체를 생성합니다
@@ -29,25 +29,32 @@ function search_address(){
                     var p_score = document.getElementById('score');
                     var p_comment = document.getElementById('comment');
                 
-                    p_score.value = data + " 점";
-                    
+                    document.getElementById('guide').className = "guide";
+                    p_score.innerHTML = data + " 점";
+                    p_score.className = "guide"
+                    // document.getElementById('score').style.visibility = "visible";
                     var n_score = parseInt(data);
                     if (n_score >= 70){
-                        p_comment.className = "red";
                         p_comment.innerHTML = "  대한민국에서 제일 위험!";
+                        p_comment.className = "red";
+                        
                     }
                     else if(n_score >= 50 && n_score < 70){
-                        p_comment.className = "orange";
                         p_comment.innerHTML = "  매우 위험!";
+                        p_comment.className = "orange";
+                        
                     }
                     else if(n_score >= 10 && n_score < 50){
-                        p_comment.className = "yellow";
                         p_comment.innerHTML = "  주의 요망!";
+                        p_comment.className = "yellow";
+                        
                     }
                     else{
-                        p_comment.className = "green";
                         p_comment.innerHTML = "  비교적 안전 :)";
+                        p_comment.className = "green";
+                        
                     }
+                    // document.getElementById('comment').style.visibility = "visible";
                     
                     
                 },
@@ -56,7 +63,7 @@ function search_address(){
 		 
         } 
         else{
-    	    document.getElementById('data1').value = "정확한 주소를 입력해주세요 :(";
+    	    document.getElementById('data1').placeholder = "정확한 주소를 입력해주세요 :(";
         }     
                                
         });
