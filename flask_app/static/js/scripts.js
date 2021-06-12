@@ -9,7 +9,8 @@ function search_address(){
     var time_ = parseFloat(document.getElementById('data2').value);
     
     if (time_ <= 0 || time_ > 24 || typeof(time_) != "number"){
-        document.getElementById('data1').placeholder = "0 ~ 24사이 숫자로 입력해주세요";
+        document.getElementById('data2').value = "";
+        document.getElementById('data2').placeholder = "0 ~ 24사이 숫자로 입력해주세요";
     }
     else{
         // 주소-좌표 변환 객체를 생성합니다
@@ -63,6 +64,7 @@ function search_address(){
 		 
         } 
         else{
+            document.getElementById('data1').value = "";
     	    document.getElementById('data1').placeholder = "정확한 주소를 입력해주세요 :(";
         }     
                                
