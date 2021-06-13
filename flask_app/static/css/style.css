@@ -323,7 +323,7 @@ p.orange{
 p.yellow{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.2rem;
-  color: #f5db5b;
+  color: #d9be55;
   
     
   -webkit-animation: fadeIn linear 2s;
@@ -348,6 +348,21 @@ p.green{
     
   margin-top: 1rem;
   margin-bottom: 1rem;   
+}
+
+p.grey{
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1rem;
+  color:  #323233;
+ 
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+    
+  margin-top: 1rem;
+  margin-bottom: 1rem;   
+   
 }
 
 

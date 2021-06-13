@@ -10,7 +10,7 @@ function search_address(){
     
     if (time_ <= 0 || time_ > 24 || isNaN(time_)){
         document.getElementById('data2').value = "";
-        document.getElementById('data2').placeholder = "0 ~ 24사이 숫자로 입력해주세요";
+        document.getElementById('data2').placeholder = "0 ~ 24";
         
         document.getElementById('score').className = "hide";
         document.getElementById('comment').className = "hide";
@@ -34,11 +34,16 @@ function search_address(){
                     var p_score = document.getElementById('score');
                     var p_comment = document.getElementById('comment');
                 
-                    document.getElementById('guide').className = "guide";
-                    p_score.innerHTML = data + " 점";
+                    document.getElementById('guide').className = "fw-bold guide";
+                    
+                    let js_data = JSON.parse(data)
+                    // key: [tmo_name, tmo_dist, score]
+                    
+                    p_score.innerHTML = js_data.score + " 점";
                     p_score.className = "guide"
                     // document.getElementById('score').style.visibility = "visible";
-                    var n_score = parseInt(data);
+                    var n_score = parseInt(js_data.score);
+                
                     if (n_score >= 70){
                         p_comment.innerHTML = "&nbsp;&nbsp;&nbsp;대한민국에서 제일 위험!";
                         p_comment.className = "red";
@@ -60,7 +65,12 @@ function search_address(){
                         
                     }
                     // document.getElementById('comment').style.visibility = "visible";
+                    document.getElementById('issoldier').className = "grey fw-bold align-self-center w-100 text-nowrap h-100"
                     
+                    var p_dist = document.getElementById('dist')
+                    p_dist.innerHTML = "목적지로부터 "+String(js_data.tmo_dist)+"km 위치에 가장 가까운 " + String(js_data.tmo_name) +" TMO가 위치해 있습니다."
+                    p_dist.className = "grey fw-light align-self-center w-100 h-100"
+                    document.getElementById("guide").scrollIntoView(true);
                     
                 },
             ); 
@@ -73,6 +83,9 @@ function search_address(){
             document.getElementById('score').className = "hide";
             document.getElementById('comment').className = "hide";
             document.getElementById('guide').className = "hide";
+            document.getElementById('dist').className = "hide";
+            document.getElementById('issoldier').className = "hide";
+            
         }     
                                
         });
