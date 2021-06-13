@@ -6,6 +6,8 @@ bp = Blueprint('main', __name__, url_prefix='/')
 # path = r"/home/COVID19danger/mysite/flask_app/model/model.pkl"
 path = r"/workspace/covid19/flask_app/model/model.pkl"
 tmo_data_path = r"/workspace/covid19/flask_app/data/tmo_data.csv"
+
+
 model = cd.load_model(path)
 
 @bp.route('/')
@@ -31,3 +33,4 @@ def test_print():
 @bp.route('/ing')
 def test():
     return 'ING is so cute!'
+
