@@ -11,6 +11,9 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
+import pandas as pd
+from haversine import haversine
+
 
 # -----------------------------------------------------------------------------------------------------------------------
 # -----------------------------------------------------기타 함수들-------------------------------------------------------
@@ -62,6 +65,30 @@ def get_geo_vector(info_dict, district_name):
 
   except:
     return vector
+
+# 위경도상 가장 가까운 TMO이름, 거리 반환
+def calc_distance(path, coordi):
+  MAX = 987654321
+  tmo_df = pd.read_csv(path, encoding='UTF-8')
+  
+  distance = MAX
+  tmo_name = ""
+  start_coordi = [float (coordi[0]), float (coordi[1])]
+    
+  # coordi = (LAT, LON)
+  for i in range(len(tmo_df)):
+    dest_coordi = tmo_df.iloc[i]["좌표"].replace(" ","").split(",")
+    dest_coordi = [float (dest_coordi[0]), float (dest_coordi[1])]
+    # print(dest_coordi)
+    dist = haversine(start_coordi, dest_coordi)
+    
+    if (dist < distance):
+      distance = dist
+      tmo_name = tmo_df.iloc[i]["구분"]
+  return tmo_name, distance
+
+
+
 
 
 # 위경도상 반경 300m 적분.
