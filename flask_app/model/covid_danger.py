@@ -70,18 +70,18 @@ def get_geo_vector(info_dict, district_name):
 def calc_distance(path, coordi):
   MAX = 987654321
   tmo_df = pd.read_csv(path, encoding='UTF-8')
-  
+
   distance = MAX
   tmo_name = ""
   start_coordi = [float (coordi[0]), float (coordi[1])]
-    
+
   # coordi = (LAT, LON)
   for i in range(len(tmo_df)):
     dest_coordi = tmo_df.iloc[i]["좌표"].replace(" ","").split(",")
     dest_coordi = [float (dest_coordi[0]), float (dest_coordi[1])]
     # print(dest_coordi)
     dist = haversine(start_coordi, dest_coordi)
-    
+
     if (dist < distance):
       distance = dist
       tmo_name = tmo_df.iloc[i]["구분"]
@@ -147,7 +147,7 @@ def create_model(save_path, path):
    seoul_cases = {}
 
    for th, td in zip(ths, tds):
-      seoul_cases[th.text.replace(" ", "")] = int(td.text)
+      seoul_cases[th.text.replace(" ", "")] = int(td.text.replace(",", ""))
 
    del seoul_cases["기타"]
 
@@ -163,7 +163,7 @@ def create_model(save_path, path):
    gyunggi_cases = {}
 
    for region, case in zip(districts, cases):
-      gyunggi_cases[region.text.replace(" ", "")] = int(case.text[6:])
+      gyunggi_cases[region.text.replace(" ", "")] = int(case.text[6:].replace(",", ""))
 
 
    # 기타 지역 코로나 확진자 현황 크롤링
@@ -175,7 +175,7 @@ def create_model(save_path, path):
 
    other_cases = {}
    for th, td in zip(ths, tds):
-      other_cases[th.text.replace(" ", "")] = int(td.text)
+      other_cases[th.text.replace(" ", "")] = int(td.text.replace(",", ""))
 
    del other_cases["합계"], other_cases["검역"], other_cases["서울"], other_cases["경기"]
 

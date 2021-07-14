@@ -173,7 +173,7 @@ p {
  }
 
 [placeholder]:focus::-webkit-input-placeholder {
-    transition: text-indent 0.4s 0.4s ease; 
+    transition: text-indent 0.4s 0.4s ease;
     text-indent: -100%;
     opacity: 1;
  }
@@ -184,7 +184,7 @@ p.main {
   color: #333232;
   margin-top: 1rem;
   margin-bottom: 1rem;
-    
+
 }
 
 /*base code*/
@@ -279,16 +279,16 @@ p.hide{
 
 p.guide{
   font-family: 'Noto Serif KR', serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333232;
   margin-top: 1rem;
-  
+
   -webkit-animation: fadeIn linear 2s;
   -moz-animation: fadeIn linear 2s;
   -o-animation: fadeIn linear 2s;
   -ms-animation: fadeIn linear 2s;
-    
-  margin-bottom: 1rem;  
+
+  margin-bottom: 1rem;
   font-weight: 500;
 }
 
@@ -296,12 +296,12 @@ p.red {
  font-family: 'Noto Serif KR', serif;
   font-size: 1.2rem;
   color: #82030f;
- 
+
   -webkit-animation: fadeIn linear 2s;
   -moz-animation: fadeIn linear 2s;
   -o-animation: fadeIn linear 2s;
   -ms-animation: fadeIn linear 2s;
-    
+
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -310,59 +310,59 @@ p.orange{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.2rem;
   color: #d17d0f;
-  
-    
+
+
   -webkit-animation: fadeIn linear 2s;
   -moz-animation: fadeIn linear 2s;
   -o-animation: fadeIn linear 2s;
   -ms-animation: fadeIn linear 2s;
-    
+
   margin-top: 1rem;
-  margin-bottom: 1rem;  
+  margin-bottom: 1rem;
 }
 p.yellow{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.2rem;
   color: #d9be55;
-  
-    
+
+
   -webkit-animation: fadeIn linear 2s;
   -moz-animation: fadeIn linear 2s;
   -o-animation: fadeIn linear 2s;
   -ms-animation: fadeIn linear 2s;
-    
+
   margin-top: 1rem;
-  margin-bottom: 1rem;   
+  margin-bottom: 1rem;
 }
 
 p.green{
   font-family: 'Noto Serif KR', serif;
   font-size: 1.2rem;
   color: #3e9423;
-  
-    
+
+
   -webkit-animation: fadeIn linear 2s;
   -moz-animation: fadeIn linear 2s;
   -o-animation: fadeIn linear 2s;
   -ms-animation: fadeIn linear 2s;
-    
+
   margin-top: 1rem;
-  margin-bottom: 1rem;   
+  margin-bottom: 1rem;
 }
 
 p.grey{
   font-family: 'Noto Serif KR', serif;
   font-size: 1rem;
   color:  #323233;
- 
+
   -webkit-animation: fadeIn linear 2s;
   -moz-animation: fadeIn linear 2s;
   -o-animation: fadeIn linear 2s;
   -ms-animation: fadeIn linear 2s;
-    
+
   margin-top: 1rem;
-  margin-bottom: 1rem;   
-   
+  margin-bottom: 1rem;
+
 }
 
 

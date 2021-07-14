@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ url_for('static', filename='css/style.css') }}?version=3777" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/style.css') }}?version=777" rel="stylesheet" />
         <!-- <link href='style.css' rel="stylesheet" /> -->
 
     </head>
@@ -39,19 +39,19 @@
                             <h1 class="display-6 text-nowrap lh-1 mb-5">코로나19 안전 지키미</h1>
 
                             <div class="d-flex flex-column align-items-start">
-		                      
+
     			                        <p class="main align-self-center w-100 text-nowrap h-100" id="where">어디로 가시나요? &nbsp;</p>
-  			                            <input type="text" id="data1" name="location" class="inp w-75" placeholder="주소를 입력해주세요 :)">
-		                      
+  			                            <input type="text" id="data1" name="location" class="inp w-100" placeholder="주소를 입력해주세요 :)">
+
                             </div>
                             <div class="d-flex flex-column align-items-start">
 		                        <p class="main align-self-center w-100 text-nowrap h-100" id="howlong">얼마나 머무르시나요? &nbsp;</p>
   			                    <div class="d-flex col-12">
                                    <input type="number" id="data2" name="time" min="0" max="24" step="0.1" class="inp w-100" placeholder="0~24">
-                                   <p class="main align-self-end w-100 text-nowrap h-100">시간</p>  
+                                   <p class="main align-self-end w-100 text-nowrap h-100">시간</p>
                                 </div>
                                 <button class="btn btn-outline-secondary align-self-end form-control form-control w-25" type="button" id="query">검색</button>
-                                 
+
                             </div>
 
                             <div class="d-flex flex-column align-items-start">
@@ -63,7 +63,7 @@
                             </div>
                             <p class="hide" id="issoldier">✔국군 장병이신가요?</p>
   			                <p class="hide" id="dist"> &nbsp;</p>
-  			                            
+
                         </div>
 
                     </div>
@@ -96,7 +96,9 @@
                         </div>
                     </div>
 	        <div class="col-12">
-		<p class="lead lh-3 fw-normal text-muted mb-5">코로나19 안전 지키미 서비스는 질병관리청의 당일 확진자 데이터를 기반으로, 지역별 코로나19 바이러스에 노출될 가능성을 머신러닝 기법을 통해 점수로 산출해주는 서비스입니다. <br> 위험도 수치는 해당 지역에 오래 머무를수록 높아지는 경향이 있습니다. 점수는 0~100점을 기반으로 하나, 100점을 초과할 수도 있습니다. 10 ~ 50점 사이는 주의, 50 ~ 70점 사이는 위험, 70점 ~ 구간은 극히 위험으로 분류하고 있습니다. <br><br>이는 단순한 참고용 수치이므로 의학적, 행정적 효력이 없음을 밝힙니다. </p>
+		<p class="lead lh-3 fw-normal text-muted mb-5">코로나19 안전 지키미 서비스는 질병관리청의 당일 확진자 데이터를 기반으로, 지역별 코로나19 바이러스에 노출될 가능성을 머신러닝 기법을 통해 점수로 산출해주는 서비스입니다. 위험도 수치는 해당 지역에 머무르는 시간이 길수록 높습니다.
+점수는 0~100점을 기반으로 하나, 당일 지역별 확진자 발생 격차가 클 경우 100점을 초과할 수도 있습니다. 10 ~ 50점 사이는 주의, 50 ~ 70점 사이는 위험, 70점 ~ 구간은 극히 위험으로 분류하고 있습니다. <br><br>이 수치는 단순한 참고용으로, 의학적, 행정적 효력이 없음을 밝힙니다. </p>
+
 	        </div>
                 </div>
             </div>
@@ -128,7 +130,7 @@
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b462bfe7291396e399eb460ffbce02eb&libraries=services"></script>
         <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요&libraries=services"></script> -->
         <!-- Core JS-->
-        <script src="{{ url_for('static', filename='js/scripts.js') }}?version=18"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}?version=777"></script>
         <!-- <script src="scripts.js"></script> -->
     </body>
 </html>
